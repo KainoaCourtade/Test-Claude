@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Développement Personnel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Mon Développement Personnel</h1>
+            <p class="tagline">Devenez la meilleure version de vous-même</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="dashboard">Tableau de Bord</button>
+            <button class="tab-btn" data-tab="goals">Objectifs</button>
+            <button class="tab-btn" data-tab="habits">Habitudes</button>
+            <button class="tab-btn" data-tab="journal">Journal</button>
+        </nav>
+
+        <!-- Dashboard Tab -->
+        <section id="dashboard" class="tab-content active">
+            <div class="quote-card">
+                <p id="daily-quote" class="quote-text">Chargement de la citation...</p>
+                <button id="new-quote-btn" class="btn-secondary">Nouvelle citation</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Objectifs</h3>
+                    <div class="stat-number" id="goals-count">0</div>
+                    <p>actifs</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Habitudes</h3>
+                    <div class="stat-number" id="habits-count">0</div>
+                    <p>suivies</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Série</h3>
+                    <div class="stat-number" id="streak-count">0</div>
+                    <p>jours</p>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>Progrès de la semaine</h2>
+                <div id="weekly-progress"></div>
+            </div>
+        </section>
+
+        <!-- Goals Tab -->
+        <section id="goals" class="tab-content">
+            <div class="section-header">
+                <h2>Mes Objectifs</h2>
+                <button class="btn-primary" id="add-goal-btn">+ Ajouter un objectif</button>
+            </div>
+
+            <div id="goal-form" class="form-card hidden">
+                <h3>Nouvel Objectif</h3>
+                <input type="text" id="goal-title" placeholder="Titre de l'objectif" class="input-field">
+                <textarea id="goal-description" placeholder="Description (optionnel)" class="input-field"></textarea>
+                <select id="goal-category" class="input-field">
+                    <option value="sante">Santé</option>
+                    <option value="carriere">Carrière</option>
+                    <option value="relations">Relations</option>
+                    <option value="finance">Finance</option>
+                    <option value="apprentissage">Apprentissage</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <div class="form-actions">
+                    <button class="btn-primary" id="save-goal-btn">Enregistrer</button>
+                    <button class="btn-secondary" id="cancel-goal-btn">Annuler</button>
+                </div>
+            </div>
+
+            <div id="goals-list" class="items-list"></div>
+        </section>
+
+        <!-- Habits Tab -->
+        <section id="habits" class="tab-content">
+            <div class="section-header">
+                <h2>Suivi des Habitudes</h2>
+                <button class="btn-primary" id="add-habit-btn">+ Ajouter une habitude</button>
+            </div>
+
+            <div id="habit-form" class="form-card hidden">
+                <h3>Nouvelle Habitude</h3>
+                <input type="text" id="habit-name" placeholder="Nom de l'habitude" class="input-field">
+                <select id="habit-frequency" class="input-field">
+                    <option value="daily">Quotidien</option>
+                    <option value="weekly">Hebdomadaire</option>
+                </select>
+                <div class="form-actions">
+                    <button class="btn-primary" id="save-habit-btn">Enregistrer</button>
+                    <button class="btn-secondary" id="cancel-habit-btn">Annuler</button>
+                </div>
+            </div>
+
+            <div id="habits-list" class="items-list"></div>
+        </section>
+
+        <!-- Journal Tab -->
+        <section id="journal" class="tab-content">
+            <div class="section-header">
+                <h2>Mon Journal</h2>
+                <button class="btn-primary" id="add-entry-btn">+ Nouvelle entrée</button>
+            </div>
+
+            <div id="entry-form" class="form-card hidden">
+                <h3>Nouvelle Entrée</h3>
+                <textarea id="entry-content" placeholder="Qu'avez-vous accompli aujourd'hui ? Comment vous sentez-vous ?" class="input-field" rows="6"></textarea>
+                <div class="mood-selector">
+                    <label>Humeur:</label>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="excellent">😄</button>
+                        <button class="mood-btn" data-mood="good">🙂</button>
+                        <button class="mood-btn" data-mood="neutral">😐</button>
+                        <button class="mood-btn" data-mood="sad">😔</button>
+                        <button class="mood-btn" data-mood="stressed">😰</button>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-primary" id="save-entry-btn">Enregistrer</button>
+                    <button class="btn-secondary" id="cancel-entry-btn">Annuler</button>
+                </div>
+            </div>
+
+            <div id="entries-list" class="items-list"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
